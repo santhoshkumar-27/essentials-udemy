@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, computed, Input, input } from '@angular/core';
 @Component({
   selector: 'app-user',
   standalone: true,
@@ -9,6 +9,11 @@ import { Component, Input } from '@angular/core';
 export class UserComponent {
   @Input({required: true}) avator!: string;
   @Input({required: true}) name!: string;
+
+  // avator = input.required<string>();
+  // name = input.required<string>();
+  // imagePath = computed(() =>  this.avator() ? `users/${this.avator() }` : '')
+
   /**
    * Resolving template complex handling 
    * using in class

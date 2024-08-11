@@ -13,4 +13,8 @@ import { DUMMY_USERS } from './shared/Utility/dummy.data';
 export class AppComponent {
   users = DUMMY_USERS;
   title = 'essentials';
+
+  onSelectItem(id: string) {
+    console.log('this is selected item', id)
+  }
 }

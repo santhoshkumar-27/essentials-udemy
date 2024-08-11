@@ -10,8 +10,8 @@ export class UserComponent {
   @Input({ required: true }) avator!: string;
   @Input({ required: true }) name!: string;
   @Input({ required: true }) id!: string;
-  // @Output() select: EventEmitter<string> = new EventEmitter<string>()
-  select = output<string>()
+  @Output() select: EventEmitter<string> = new EventEmitter<string>()
+  // select = output<string>()
   // avator = input.required<string>();
   // name = input.required<string>();
   // imagePath = computed(() =>  this.avator() ? `users/${this.avator() }` : '')

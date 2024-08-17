@@ -20,9 +20,9 @@ export class TasksComponent {
     return this.user ? this.taskService.getSelectedUserTask(this.user.id): [];
   }
 
-  onCompleteTask(id: string) {
-    this.taskService.onCompleteTask(id);
-  }
+  // onCompleteTask(id: string) {
+  //   this.taskService.onCompleteTask(id);
+  // }
 
   onAddingNewTask() {
     this.isAddingNewTask = true;

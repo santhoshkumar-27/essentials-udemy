@@ -12,6 +12,7 @@ export class UserComponent {
   // @Input({ required: true }) name!: string;
   // @Input({ required: true }) id!: string;
   @Input({required: true}) user!: USER;
+  @Input({required: true}) selectedUserId!: string;
   @Output() select: EventEmitter<string> = new EventEmitter<string>()
   // select = output<string>()
   // avator = input.required<string>();
@@ -28,5 +29,8 @@ export class UserComponent {
 
   onSelectedUser() {
     this.select.emit(this.user.id)
+  }
+  get activeSelectedUser() {
+    return this.selectedUserId && this.user ? this.user.id === this.selectedUserId : false;
   }
 }

@@ -32,7 +32,7 @@ export class TasksComponent {
     this.isAddingNewTask = false;
   }
 
-  onNewTaskAdd(data: NewTask) {
-    this.taskService.onNewTaskAdd(data, this.user.id)
-  }
+  // onNewTaskAdd(data: NewTask) {
+  //   this.taskService.onNewTaskAdd(data, this.user.id)
+  // }
 }

@@ -12,7 +12,7 @@ import { TaskComponent } from "./task/task.component";
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  users = DUMMY_USERS;
+  users: USER[] = DUMMY_USERS;
   selectedUserId!: string;
   title = 'essentials';
 

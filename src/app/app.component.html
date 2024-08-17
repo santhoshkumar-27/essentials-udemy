@@ -2,25 +2,26 @@
 
 <main>
   <ul id="users">
-    @for (user of users; track $index) {
-    <li>
+    <!-- @for (user of users; track $index) { -->
+    <li *ngFor="let user of users">
       <app-user [user]="user" (select)="onSelectItem($event)" />
     </li>
     <!--             [name]="user.name"
             [avator]="user.avatar"
             [id]="user.id" -->
-    } @empty {
-      <li>
-        No Users available
-      </li>
-    }
+    <!-- } -->
+    <!-- @empty { -->
+    <li *ngIf="!users.length">
+      No Users available
+    </li>
+    <!-- } -->
   </ul>
 
-  @if (selectedUser) {
-  <app-task [name]="selectedUser.name" />
-  } @else {
-    <p id="fallback">
-      Select a user to see their task
-    </p>
-  }
+  <!-- @if (selectedUser) { -->
+  <app-task *ngIf="selectedUser" [name]="selectedUser.name" />
+  <!-- } @else { -->
+  <p id="fallback" *ngIf="!selectedUser">
+    Select a user to see their task
+  </p>
+  <!-- } -->
 </main>

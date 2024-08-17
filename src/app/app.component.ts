@@ -4,10 +4,11 @@ import { HeaderComponent } from "./header/header.component";
 import { UserComponent } from "./user/user.component";
 import { DUMMY_USERS, USER } from './shared/Utility/dummy.data';
 import { TaskComponent } from "./task/task.component";
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, UserComponent, TaskComponent],
+  imports: [RouterOutlet, HeaderComponent, UserComponent, TaskComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

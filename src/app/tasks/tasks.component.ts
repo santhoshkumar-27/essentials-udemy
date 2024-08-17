@@ -16,6 +16,12 @@ export class TasksComponent {
   taskLists: TASK[] = DUMMY_TASKS;
 
   get tasks(): TASK[] {
+    console.log('this is task lists')
     return this.user ? this.taskLists.filter((task) => task.userId === this.user.id): [];
+  }
+
+  onCompleteTask(id: string) {
+    const filterdLists = this.taskLists.filter((task) => task.id != id);
+    this.taskLists = [...filterdLists]
   }
 }

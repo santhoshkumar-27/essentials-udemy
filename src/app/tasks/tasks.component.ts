@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { TaskComponent } from "../task/task.component";
 import { DUMMY_TASKS, NewTask, TASK, USER } from '../shared/Utility/dummy.data';
 import { NewTaskComponent } from "../new-task/new-task.component";
+import { TaskService } from './task.service';
 
 @Component({
   selector: 'app-tasks',
@@ -13,16 +14,14 @@ import { NewTaskComponent } from "../new-task/new-task.component";
 export class TasksComponent {
   @Input({required: true}) user!: USER;
   isAddingNewTask = false;
-  taskLists: TASK[] = DUMMY_TASKS;
+  private taskService = inject(TaskService);
 
   get tasks(): TASK[] {
-    console.log('this is task lists')
-    return this.user ? this.taskLists.filter((task) => task.userId === this.user.id): [];
+    return this.user ? this.taskService.getSelectedUserTask(this.user.id): [];
   }
 
   onCompleteTask(id: string) {
-    const filterdLists = this.taskLists.filter((task) => task.id != id);
-    this.taskLists = [...filterdLists]
+    this.taskService.onCompleteTask(id);
   }
 
   onAddingNewTask() {
@@ -34,10 +33,6 @@ export class TasksComponent {
   }
 
   onNewTaskAdd(data: NewTask) {
-    this.taskLists.push({
-      ...data,
-      id: Date.now().toString(),
-      userId: this.user.id
-    })
+    this.taskService.onNewTaskAdd(data, this.user.id)
   }
 }

@@ -3,18 +3,16 @@
 <main>
   <ul id="users">
     @for (user of users; track $index) {
-        <li>
-          <app-user
-            [name]="user.name"
+    <li>
+      <app-user [user]="user" (select)="onSelectItem($event)" />
+    </li>
+    <!--             [name]="user.name"
             [avator]="user.avatar"
-            [id]="user.id"
-            (select)="onSelectItem($event)"
-          />
-        </li>
+            [id]="user.id" -->
     }
   </ul>
 
   @if (selectedUser) {
-    <app-task  [name]="selectedUser.name" />
+  <app-task [name]="selectedUser.name" />
   }
 </main>

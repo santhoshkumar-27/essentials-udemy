@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { DUMMY_TASKS, NewTask, TASK } from '../shared/Utility/dummy.data';
+import { DUMMY_TASKS, NewTask, TASK } from '../../shared/Utility/dummy.data';
 
 @Injectable({
   providedIn: 'root'

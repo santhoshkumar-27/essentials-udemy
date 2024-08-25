@@ -1,7 +1,7 @@
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { DatePipe } from '@angular/common';
-import { TASK } from '../shared/Utility/dummy.data';
-import { CardComponent } from "../shared/components/card/card.component";
+import { TASK } from '../../shared/Utility/dummy.data';
+import { CardComponent } from "../../shared/components/card/card.component";
 import { TaskService } from '../tasks/task.service';
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component, inject, Input } from '@angular/core';
 import { TaskComponent } from "../task/task.component";
-import { DUMMY_TASKS, NewTask, TASK, USER } from '../shared/Utility/dummy.data';
+import { DUMMY_TASKS, NewTask, TASK, USER } from '../../shared/Utility/dummy.data';
 import { NewTaskComponent } from "../new-task/new-task.component";
 import { TaskService } from './task.service';
 
